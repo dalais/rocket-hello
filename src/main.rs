@@ -7,6 +7,14 @@ fn world() -> &'static str {
     "Hello, world!"
 }
 
+#[get("/<string>")]
+fn new_string(string: String) -> String {
+    format!("Hello, {}", string.as_str())
+}
+
 fn main() {
-    rocket::ignite().mount("/hello", routes![world]).launch();
+    rocket::ignite()
+        .mount("/hello", routes![world])
+        .mount("/mystring", routes![new_string])
+        .launch();
 }
