@@ -1,5 +1,4 @@
 #![allow(proc_macro_derive_resolution_fallback)]
-#[warn(unused_imports)]
 
 use diesel;
 use diesel::prelude::*;
